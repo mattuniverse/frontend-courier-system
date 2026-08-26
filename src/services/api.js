@@ -67,6 +67,20 @@ export const getParcels = (params) => api.get('/parcels/', { params })
 export const bookParcel = (data) => api.post('/parcels/book', data)
 export const getParcel = (id) => api.get(`/parcels/${id}`)
 export const updateParcelStatus = (id, data) => api.patch(`/parcels/${id}/status`, data)
+export const bulkUpdateStatus = (data) => api.post('/parcels/bulk-status', data)
+export const getParcelReceipt = (id) => api.get(`/parcels/${id}/receipt`, { responseType: 'blob' })
+export const resendEmail = (id) => api.post(`/parcels/${id}/resend-email`)
+export const addDeliveryProof = (id, data) => api.post(`/parcels/${id}/delivery-proof`, data)
+
+// ── Cost Calculator ───────────────────────────────────────────────
+export const estimateCost = (data) => api.post('/cost/estimate', data)
+
+// ── Analytics ─────────────────────────────────────────────────────
+export const getAnalyticsSummary = () => api.get('/analytics/summary')
+export const getAnalyticsWeekly = () => api.get('/analytics/weekly')
+export const getAnalyticsMonthly = () => api.get('/analytics/monthly')
+export const getBranchPerformance = () => api.get('/analytics/branch-performance')
+export const getRevenueData = () => api.get('/analytics/revenue')
 
 // ── Public Tracking ───────────────────────────────────────────────
 export const trackParcel = (trackingNo) => {

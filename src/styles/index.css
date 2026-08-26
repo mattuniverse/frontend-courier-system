@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  font-family: system-ui, -apple-system, sans-serif;
+@layer base {
+  * {
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+  .dark {
+    color-scheme: dark;
+  }
 }
